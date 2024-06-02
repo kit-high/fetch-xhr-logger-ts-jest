@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "fetch xhr logger",
+  "version": "1.0",
+  "description": "Logs  fetch and xhr requests to the console.",
+  "permissions": ["webNavigation", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["override-fetch.js", "override-xhr.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
