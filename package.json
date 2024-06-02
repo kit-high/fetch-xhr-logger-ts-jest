@@ -2,7 +2,7 @@
   "name": "es22-typescript-jest-sample",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm run format && npm run test && tsc && npm run copy-files",
+    "build": "npm run format && npm run test && tsc --project tsconfig.build.json && npm run copy-files",
     "test": "jest",
     "format": "prettier --write .",
     "copy-files": "cpx src/assets/*.{js,json} dist"
